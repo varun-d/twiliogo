@@ -1,0 +1,20 @@
+package main
+
+import (
+	// "fmt"
+	"os"
+)
+
+type Message struct {
+	Message  string
+	BMessage []byte
+}
+
+func (m *Message) Save() error {
+	filename := "test.md"
+	return os.WriteFile(filename, m.BMessage, 0600)
+}
+
+func (m Message) LoadMessage() error {
+	return nil
+}
